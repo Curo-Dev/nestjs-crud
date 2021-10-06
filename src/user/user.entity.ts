@@ -5,12 +5,24 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({
+    type: 'char',
+    length: 255,
+    name: 'username',
+  })
   username: string;
 
-  @Column('text')
+  @Column({
+    type: 'char',
+    length: 128,
+    name: 'password',
+  })
   password: string;
 
-  @Column()
+  @Column({
+    type: 'char',
+    length: 128,
+    name: 'salt',
+  })
   salt: string;
 }
